@@ -1,0 +1,30 @@
+{
+  "name": "daemonProxy",
+  "version": "0.1.0-alpha",
+  "description": "Proxy for Daemon Bridge.",
+  "author": "Olivier F. and Julien B.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "node daemonProxy.js",
+    "build": "react-scripts build",
+    "test": "node daemonProxy.js",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

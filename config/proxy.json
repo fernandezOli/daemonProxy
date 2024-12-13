@@ -1,0 +1,5 @@
+{
+  "name": "Daemon Proxy Configuration",
+  "version": "0.1.0-alpha",
+  "daemonList": ["http://localhost:3000/json", "http://localhost:3001/json"]
+}
