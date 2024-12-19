@@ -1,6 +1,6 @@
 const http = require('http');
 
-let httpServerPort = 4000; // default port
+let httpServerPort = 3000; // default port
 const configFile = require("./config/proxy.json"); // default config file
 
 let title = "Daemon Proxy - v0.1.0-alpha";
