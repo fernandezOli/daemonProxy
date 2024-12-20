@@ -1,6 +1,9 @@
 //import daemonProxy from '../daemonProxy';
 
-await getJsons();
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    await getJsons()
+);
 
 // get json file from daemons
 export async function getJsons() {
