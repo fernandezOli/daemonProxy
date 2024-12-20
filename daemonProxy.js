@@ -1,4 +1,5 @@
 const http = require('http');
+//const fetch = require('node-fetch');
 
 let httpServerPort = 3000; // default port
 const configFile = require("./config/proxy.json"); // default config file
@@ -56,12 +57,12 @@ async function getJsons() {
 	let jsonDaemons = [];
 	for (let i = 0; i < configFile.daemonList.length; i++) {
 		try {
-			const response = await fetch(configFile.daemonList[i]);
+			const response = await fetch(configFile.daemonList[i], {timeout: false}); //
 			if (!response.ok) continue;
 			const loadedConfig = await response.json();
 			jsonDaemons.push(loadedConfig);
 		} catch(error) {
-			//if (error.cause.code === 'ECONNREFUSED') continue;
+			if (error.cause !== undefined && error.cause.code !== undefined && error.cause.code === 'ECONNREFUSED') continue;
 			//console.error('-- ERROR json (code):', error.cause.code);
 			//console.error('-- ERROR json (cause):', error.cause);
 			console.error('-- ERROR json:', error);
