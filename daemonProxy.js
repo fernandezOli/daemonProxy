@@ -61,10 +61,10 @@ async function getJsons() {
 			const loadedConfig = await response.json();
 			jsonDaemons.push(loadedConfig);
 		} catch(error) {
-			if (error.cause.code === 'ECONNREFUSED') continue;
-			console.error('-- ERROR json (code):', error.cause.code);
-			console.error('-- ERROR json (cause):', error.cause);
-			//console.error('-- ERROR json:', error);
+			//if (error.cause.code === 'ECONNREFUSED') continue;
+			//console.error('-- ERROR json (code):', error.cause.code);
+			//console.error('-- ERROR json (cause):', error.cause);
+			console.error('-- ERROR json:', error);
 			continue;
 		}
 	}
