@@ -1,5 +1,5 @@
 {
-  "name": "daemonProxy",
+  "name": "daemonproxy",
   "version": "0.1.0-alpha",
   "description": "Proxy for Daemon Bridge.",
   "author": "Olivier F. and Julien B.",
