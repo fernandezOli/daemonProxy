@@ -51,9 +51,8 @@ async function httpServer(req, res) {
 	}
 }
 
-
 // get json file from daemons
-export async function getJsons() {
+async function getJsons() {
 	let jsonDaemons = [];
 	for (let i = 0; i < configFile.daemonList.length; i++) {
 		try {
