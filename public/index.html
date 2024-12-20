@@ -9,6 +9,26 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+        <script>
+            let jsonDaemons = [];
+            for (let i = 0; i < configFile.daemonList.length; i++) {
+                try {
+                    const response = await fetch(configFile.daemonList[i]);
+                    if (!response.ok) continue;
+                    const loadedConfig = await response.json();
+                    jsonDaemons.push(loadedConfig);
+                } catch (error) {
+                    if (error.cause.code === 'ECONNREFUSED') continue;
+                    console.error('-- ERROR json (code):', error.cause.code);
+                    console.error('-- ERROR json (cause):', error.cause);
+                    //console.error('-- ERROR json:', error);
+                    continue;
+                }
+            }
+            //return JSON.stringify(jsonDaemons);
+            document.body.innerHTML = JSON.stringify(jsonDaemons);
+        </script>
+    </div>
   </body>
 </html>
